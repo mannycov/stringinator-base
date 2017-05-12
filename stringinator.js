@@ -16,30 +16,33 @@ const hasChar = function(str, target) {
   return _.some(str, item => item === target);
 };
 
-const isOnlyDigits = function(str) {
-  // returns true for a string of only digits
-  const strNums = parseInt(str);
-  return _.every(strNums, item => !isNaN(item));
-  return false;
-};
-
+// 1.
 // const isOnlyDigits = function(str) {
-//   return ._every(parseInt(str), function(obj, item) {
-//     if (!isNaN(obj[item]) {
+//   // returns true for a string of only digits
+//   const strNums = parseInt(str);
+//   return _.every(strNums, (item) => isNaN(item);
+// };
 
-//     }
-//   }, {});
-// }
+const isOnlyDigits = function(str) {
+  const parsedStr = parseInt(str);
+  return _.every(parsedStr, function(obj, item) {
+    if (isNaN(item) in obj || parsedStr.length !== str.length) {
+      return false;
+    } 
+    });
+}
 
 const filterToOnlyDigits = function(str) {
-  _.filter(str, item => !isNaN(item)).join('');
+     return _.filter(str, item => (item === ' ') ? false : !isNaN(item)).join('');
 };
 
+// 2.
 const truncateString = function(val, maxLength) {
   // A freebie solution, this is the ONLY method here that doesn't use Underbar.
   return String(val).slice(0, maxLength);
 };
 
+// 3.
 const truncateLongItems = function(obj, maxLength) {
   // hint: use truncateString above
   return truncateString(obj, item => item[key], maxLength);
